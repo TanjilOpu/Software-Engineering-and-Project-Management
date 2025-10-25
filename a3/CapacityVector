@@ -1,0 +1,18 @@
+
+package assignment3;
+
+import java.util.Vector;
+
+public class CapacityVector {
+    public static void main(String[] args) {
+        // Create a Vector with initial capacity 4
+        Vector<Integer> vector = new Vector<>(4);
+
+        System.out.println("Adding elements to Vector and checking capacity:\n");
+
+        for (int i = 1; i <= 10; i++) {
+            vector.add(i);
+            System.out.println("Added: " + i + " | Size: " + vector.size() + " | Capacity: " + vector.capacity());
+        }
+    }
+}
