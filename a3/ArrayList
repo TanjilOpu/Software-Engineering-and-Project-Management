@@ -1,0 +1,28 @@
+
+package assignment3;
+
+import java.util.ArrayList;
+import java.lang.reflect.Field;
+
+public class Arraylist {
+    public static void main(String[] args) throws Exception {
+       
+        ArrayList<Integer> list = new ArrayList<>(4);
+
+        // Use reflection to access the private 'elementData' array
+        Field elementDataField = ArrayList.class.getDeclaredField("elementData");
+        elementDataField.setAccessible(true);
+
+        System.out.println("Adding elements to ArrayList and checking capacity:\n");
+
+        for (int i = 1; i <= 10; i++) {
+            list.add(i);
+
+            // Get the internal array to find current capacity
+            Object[] elementData = (Object[]) elementDataField.get(list);
+            int capacity = elementData.length;
+
+            System.out.println("Added: " + i + " | Size: " + list.size() + " | Capacity: " + capacity);
+        }
+    }
+}
