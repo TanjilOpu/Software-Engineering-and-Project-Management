@@ -1,0 +1,33 @@
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
+public class PQ_Queue_Stack {
+
+    // We use custom comparator to reverse order for "stack" behavior
+    public static void main(String[] args) {
+
+        // Queue (smallest element has highest priority)
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+
+        // Stack (largest element should come first)
+        PriorityQueue<Integer> stack = new PriorityQueue<>(Comparator.reverseOrder());
+
+        queue.add(3);
+        queue.add(10);
+        queue.add(1);
+
+        stack.add(3);
+        stack.add(10);
+        stack.add(1);
+
+        System.out.println("Queue (PriorityQueue):");
+        while(!queue.isEmpty()){
+            System.out.println(queue.poll());
+        }
+
+        System.out.println("\nStack (PriorityQueue with reverse order):");
+        while(!stack.isEmpty()){
+            System.out.println(stack.poll());
+        }
+    }
+}
