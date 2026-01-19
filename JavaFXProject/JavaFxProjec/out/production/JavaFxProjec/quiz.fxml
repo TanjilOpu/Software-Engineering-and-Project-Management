@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="QuizController">
+
+    <top>
+        <Label text="JavaFX Quiz Game"
+               style="-fx-font-size: 20px; -fx-padding: 10;"/>
+    </top>
+
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <TextField fx:id="nameField" promptText="Enter your name" />
+
+            <Button text="Start Quiz" onAction="#startQuiz" />
+
+            <Label fx:id="questionLabel" wrapText="true"/>
+
+            <Button fx:id="optionA" text="Option A" onAction="#handleAnswer"/>
+            <Button fx:id="optionB" text="Option B" onAction="#handleAnswer"/>
+            <Button fx:id="optionC" text="Option C" onAction="#handleAnswer"/>
+            <Button fx:id="optionD" text="Option D" onAction="#handleAnswer"/>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-padding: 10;">
+            <Button text="Restart Quiz" onAction="#restartQuiz"/>
+            <Button text="Exit" onAction="#exitApp"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
